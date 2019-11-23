@@ -14,6 +14,8 @@
                         'Elixir.ChatAppWeb.LayoutView',
                         'Elixir.ChatAppWeb.PageController',
                         'Elixir.ChatAppWeb.PageView',
+                        'Elixir.ChatAppWeb.RoomController',
+                        'Elixir.ChatAppWeb.RoomView',
                         'Elixir.ChatAppWeb.Router',
                         'Elixir.ChatAppWeb.Router.Helpers',
                         'Elixir.ChatAppWeb.UserSocket']},
