@@ -17,7 +17,7 @@ defmodule ChatAppWeb.RoomController do
   def create(conn, %{"room" => room_params}) do
     # inspect(conn)
     case Talk.create_room(room_params) do
-      {:ok, room} ->
+      {:ok, _room} ->
         conn
         |> put_flash(:info, "Room Created!")
         |> redirect(to: Routes.room_path(conn, :index))
