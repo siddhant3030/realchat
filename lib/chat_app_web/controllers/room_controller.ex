@@ -5,7 +5,8 @@ defmodule ChatAppWeb.RoomController do
   alias ChatApp.Repo
 
   def index(conn, _params) do
-    render(conn, "index.html")
+    rooms = Talk.list_rooms(%Room{})
+    render(conn, "index.html", rooms: rooms)
   end
 
   def new(conn, _params) do
@@ -24,5 +25,9 @@ defmodule ChatAppWeb.RoomController do
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
+  end
+
+  def show(conn, _) do
+    render(conn, "show.html")
   end
 end
