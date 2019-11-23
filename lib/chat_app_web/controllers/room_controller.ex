@@ -5,7 +5,7 @@ defmodule ChatAppWeb.RoomController do
   alias ChatApp.Repo
 
   def index(conn, _params) do
-    rooms = Talk.list_rooms(%Room{})
+    rooms = Talk.list_rooms()
     render(conn, "index.html", rooms: rooms)
   end
 
@@ -27,7 +27,8 @@ defmodule ChatAppWeb.RoomController do
     end
   end
 
-  def show(conn, _) do
-    render(conn, "show.html")
+  def show(conn, %{"id" => id}) do
+    room = Talk.get_room!(id)
+    render(conn, "show.html", room: room)
   end
 end
